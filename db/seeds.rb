@@ -5,3 +5,36 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+
+10.times do
+  name = Faker::Name
+  User.create(first_name: name.first_name, last_name: name.last_name,
+              password: Faker::Internet.password, email: Faker::Internet.email)
+
+  Category.create(title: Faker::ProgrammingLanguage.name)
+end
+
+20.times do
+  Test.create(title: Faker::Lorem.sentence, level: (0..5).to_a.sample,
+              category_id: Category.pluck(:id).sample)
+end
+
+50.times do
+  Question.create(body: Faker::Lorem.question, test_id: Test.pluck(:id).sample)
+end
+
+200.times do
+  question_id = Question.pluck(:id).sample
+  correct = Answer.find_by(question_id: question_id).nil? ? true : false
+  Answer.create(body: Faker::Lorem.sentence, correct: correct,
+                question_id: question_id)
+end
+
+User.pluck(:id).each do |user_id|
+  r = rand(2..5)
+  tests = Test.pluck(:id)
+  r.times do
+    TestUser.create(user_id: user_id, test_id: tests.sample)
+  end
+end
