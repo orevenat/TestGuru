@@ -35,6 +35,6 @@ User.pluck(:id).each do |user_id|
   r = rand(2..5)
   tests = Test.pluck(:id)
   r.times do
-    TestUser.create(user_id: user_id, test_id: tests.sample)
+    UserTest.create(user_id: user_id, test_id: tests.sample)
   end
 end
