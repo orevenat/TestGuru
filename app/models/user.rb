@@ -1,8 +1,12 @@
 class User < ApplicationRecord
   has_secure_password
+  has_many :author, class_name: 'User'
+  has_many :tests_users
+  has_many :tests, through: :tests_users
 
   def find_test(level)
-    query = 'JOIN user_tests ON test_id = tests.id'
-    Test.where(level: level).joins(query).where(user_tests: { user_id: id })
+    Test.where(level: level)
+        .joins(:tests_users)
+        .where(tests_users: { user_id: id })
   end
 end
