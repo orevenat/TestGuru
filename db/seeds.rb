@@ -15,8 +15,12 @@ require 'faker'
   Category.create(title: Faker::ProgrammingLanguage.name)
 end
 
+
+author_id = User.first.id
+
 20.times do
-  Test.create(title: Faker::Lorem.sentence, level: (0..5).to_a.sample,
+  Test.create(author_id: author_id, title: Faker::Lorem.sentence,
+              level: (0..5).to_a.sample,
               category_id: Category.pluck(:id).sample)
 end
 
@@ -35,6 +39,6 @@ User.pluck(:id).each do |user_id|
   r = rand(2..5)
   tests = Test.pluck(:id)
   r.times do
-    UserTest.create(user_id: user_id, test_id: tests.sample)
+    TestsUser.create(user_id: user_id, test_id: tests.sample)
   end
 end
