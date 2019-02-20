@@ -5,14 +5,17 @@ class Test < ApplicationRecord
   has_many :tests_users
   has_many :users, through: :tests_users
 
+  scope :easy, -> { where(level: 1..2) }
+  scope :middle, -> { where(level: 2..4) }
+  scope :hard, -> { where(level: 5..Float::INFINITY) }
+  scope :by_category, lamda(name) do
+    category.where(categories: { title: name })
+            .order(title: :desc)
+            .pluck(:title)
+  end
+
   validates :title, presence: true
   validates :level, numericality: { greater_than_or_equal_to: 0 }
   validates :title, uniqueness: { scope: :level,
                                   message: 'title + level must be unique' }
-
-  def self.by_category(name)
-    Test.joins(:category)
-        .where(categories: { title: name })
-        .order(title: :desc).pluck(:title)
-  end
 end
