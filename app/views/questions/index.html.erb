@@ -6,7 +6,7 @@
     <li>
       <tr>
         <td><%= question.body %></td>
-        <td><%= link_to 'Show', question_path(question) %></td>
+        <td><%= link_to 'Show', test_question_path(@test, question) %></td>
       </tr>
     </li>
   <% end %>
