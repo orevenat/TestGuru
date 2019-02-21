@@ -26,19 +26,21 @@ end
 
 50.times do
   Question.create(body: Faker::Lorem.question, test_id: Test.pluck(:id).sample)
-end
 
-200.times do
-  question_id = Question.pluck(:id).sample
-  correct = Answer.find_by(question_id: question_id).nil? ? true : false
-  Answer.create(body: Faker::Lorem.sentence, correct: correct,
-                question_id: question_id)
+  question_id = Question.last.id
+  4.times do
+    correct = Answer.find_by(question_id: question_id).nil? ? true : false
+    Answer.create(body: Faker::Lorem.sentence, correct: correct,
+                  question_id: question_id)
+  end
 end
 
 User.pluck(:id).each do |user_id|
   r = rand(2..5)
   tests = Test.pluck(:id)
   r.times do
-    TestsUser.create(user_id: user_id, test_id: tests.sample)
+    test_id = tests.sample
+    tests.delete(test_id)
+    TestsUser.create(user_id: user_id, test_id: test_id)
   end
 end
