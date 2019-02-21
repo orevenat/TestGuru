@@ -1,17 +1,16 @@
 class QuestionsController < ApplicationController
+
+  before_action :find_test
+
   def index
-    @test = Test.find(params[:test_id])
     @questions = @test.questions
   end
 
   def show
-    @test = Test.find(params[:test_id])
     @question = Question.find(params[:id])
   end
 
-  def new
-    @test = Test.find(params[:test_id])
-  end
+  def new; end
 
   def create
     render plain: question_params.inspect
@@ -25,6 +24,10 @@ class QuestionsController < ApplicationController
   end
 
   private
+
+  def find_test
+    @test = Test.find(params[:test_id])
+  end
 
   def question_params
     params.require(:question).permit(:body)
