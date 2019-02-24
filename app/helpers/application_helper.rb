@@ -4,8 +4,7 @@ module ApplicationHelper
   end
 
   def github_url(author, repo = '')
-    "<a href='https://github.com/#{author}/#{repo}' target='_blank'>
-      #{repo != '' ? repo : author}
-    </a>".html_safe
+    message = repo == '' ? author : repo
+    link_to message, "https://github.com/#{author}/#{repo}", target: '_blank'
   end
 end

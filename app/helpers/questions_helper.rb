@@ -1,6 +1,6 @@
 module QuestionsHelper
-  def question_header(type, title)
-    message = type == :create ? 'Create new' : 'Edit'
-    "#{message} #{title} Question"
+  def question_header(question)
+    message = question.new_record? ? 'Create new' : 'Edit'
+    "#{message} #{question.test.title} Question"
   end
 end
