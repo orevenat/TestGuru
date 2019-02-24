@@ -2,6 +2,7 @@
 <h2>Question list</h2>
 
 <%= link_to 'New question', new_test_question_path %>
+Questions count: <%= @test.questions.count %>
 <ul>
   <% @questions.each do |question| %>
     <li>
