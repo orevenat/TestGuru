@@ -1,9 +1,9 @@
 <h1>Test: <%= @test.title %></h1>
 <h2>Question list</h2>
 
-<%= link_to 'New question', new_test_question_path %>
+<%= link_to 'New question', new_test_question_path(@test.id) %>
 <ul>
-  <% @questions.each do |question| %>
+  <% @test.questions.each do |question| %>
     <li>
       <tr>
         <td><%= question.body %></td>

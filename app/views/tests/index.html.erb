@@ -1,0 +1,12 @@
+<h1>Test list:</h1>
+
+<ul>
+  <% @tests.each do |test| %>
+    <li>
+      <tr>
+        <td><%= test.title %></td>
+        <td><%= link_to 'Show', test_path(test) %></td>
+      </tr>
+    </li>
+  <% end %>
+<ul>
