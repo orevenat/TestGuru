@@ -16,6 +16,14 @@ class TestPassage < ApplicationRecord
     save!
   end
 
+  def result
+    (test.questions.count / correct_questions * 100).round
+  end
+
+  def success?
+    result >= 85
+  end
+
   private
 
   def before_validation_set_first_question
