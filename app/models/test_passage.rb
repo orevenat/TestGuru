@@ -1,4 +1,5 @@
 class TestPassage < ApplicationRecord
+  SUCCESS_RATE = 85
 
   belongs_to :user
   belongs_to :test
@@ -21,7 +22,7 @@ class TestPassage < ApplicationRecord
   end
 
   def success?
-    result >= 85
+    result >= SUCCESS_RATE
   end
 
   def current_number
