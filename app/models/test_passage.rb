@@ -17,11 +17,15 @@ class TestPassage < ApplicationRecord
   end
 
   def result
-    (test.questions.count / correct_questions * 100).round
+    (correct_questions / test.questions.count * 100).round
   end
 
   def success?
     result >= 85
+  end
+
+  def current_number
+    test.questions.where('id <= ?', current_question).count
   end
 
   private

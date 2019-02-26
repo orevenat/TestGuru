@@ -18,4 +18,8 @@ class Test < ApplicationRecord
   def self.titles_by_category(cat)
     by_category(cat).order(title: :desc).pluck(:title)
   end
+
+  def questions_count
+    questions.count
+  end
 end
