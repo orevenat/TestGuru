@@ -1,19 +1,21 @@
 <h1>Test: <%= @test.title %></h1>
-<h2>Question list</h2>
 
+<p>Level: <%= @test.level %></p>
+<p>Category: <%= @test.category.title %></p>
+<p>Author: <%= @test.author.full_name %></p>
+<p>Questions count: <%= @test.questions.count %></p>
+
+<%= link_to 'Edit', edit_test_path(@test) %> |
+<%= link_to 'List', tests_path %>
+<br><br>
 <%= link_to 'New question', new_test_question_path(@test.id) %>
-Questions count: <%= @test.questions.count %>
-<ul>
-  <% @test.questions.each do |question| %>
-    <li>
-      <tr>
-        <td><%= question.body %></td>
-        <td><%= link_to 'Show', question_path(question) %></td>
-        <td><%= link_to 'Edit', edit_question_path(question) %></td>
-        <td><%= link_to 'Delete', question_path(question),
-                method: :delete,
-                data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    </li>
-  <% end %>
-<ul>
+<h2>Question list</h2>
+<table>
+  <tr>
+    <th>Question</th>
+    <th colspan="3">Actions</th>
+  </tr>
+  <%= render @questions %>
+
+</table>
+
