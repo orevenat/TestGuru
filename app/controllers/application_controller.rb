@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
     end
 
     cookies[:email] = current_user&.email
+    cookies[:back_url] = request.original_fullpath
   end
 
   def current_user
