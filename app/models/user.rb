@@ -4,7 +4,8 @@ class User < ApplicationRecord
   has_many :test_passages
   has_many :tests, through: :test_passages
 
-  validates :email, presence: true, uniqueness: true
+  validates :email, presence: true, format: /\w+@\w+\.{1}[a-zA-Z]{2,}/,
+                    uniqueness: true
   validates :password, presence: true
 
   def full_name
