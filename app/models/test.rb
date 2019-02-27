@@ -2,10 +2,10 @@ class Test < ApplicationRecord
   belongs_to :category
   belongs_to :author, class_name: 'User'
   has_many :questions
-  has_many :tests_users
-  has_many :users, through: :tests_users
+  has_many :test_passages
+  has_many :users, through: :test_passages
 
-  scope :easy, -> { where(level: 1..2) }
+  scope :easy, -> { where(level: 0..2) }
   scope :middle, -> { where(level: 2..4) }
   scope :hard, -> { where(level: 5..Float::INFINITY) }
   scope :by_category, ->(name) { category.where(categories: { title: name }) }
@@ -17,5 +17,9 @@ class Test < ApplicationRecord
 
   def self.titles_by_category(cat)
     by_category(cat).order(title: :desc).pluck(:title)
+  end
+
+  def questions_count
+    questions.count
   end
 end

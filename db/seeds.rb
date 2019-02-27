@@ -35,12 +35,3 @@ end
   end
 end
 
-User.pluck(:id).each do |user_id|
-  r = rand(2..5)
-  tests = Test.pluck(:id)
-  r.times do
-    test_id = tests.sample
-    tests.delete(test_id)
-    TestsUser.create(user_id: user_id, test_id: test_id)
-  end
-end
