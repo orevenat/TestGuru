@@ -36,7 +36,7 @@ class QuestionsController < ApplicationController
     @test = @question.test
     @question.destroy
 
-    redirect_to test_path(@test.id)
+    redirect_to admin_test_path(@test.id)
   end
 
   private
