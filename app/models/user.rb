@@ -1,12 +1,17 @@
 class User < ApplicationRecord
-  has_secure_password
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable,
+         :registerable,
+         :recoverable,
+         :rememberable,
+         :trackable,
+         :validatable,
+         :confirmable
+
   has_many :my_tests, class_name: 'Test', foreign_key: :author_id
   has_many :test_passages
   has_many :tests, through: :test_passages
-
-  validates :email, presence: true, format: /\w+@\w+\.{1}[a-zA-Z]{2,}/,
-                    uniqueness: true
-  validates :password, presence: true
 
   def full_name
     "#{first_name} #{last_name}"
