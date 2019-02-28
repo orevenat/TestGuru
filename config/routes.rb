@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   root to: 'tests#index'
 
   devise_for :users, path: :gurus, path_names: { sign_in: :login,
@@ -17,6 +16,7 @@ Rails.application.routes.draw do
     end
   end
 
+  get '/admin' => 'admin/tests#index', as: :admin_root
   namespace :admin do
     resources :tests do
       resources :questions, shallow: true, except: :index do
@@ -24,5 +24,4 @@ Rails.application.routes.draw do
       end
     end
   end
-
 end
