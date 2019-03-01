@@ -3,17 +3,17 @@
     <li>
       <%= link_to 'TestGuru', root_path %>
     </li>
-    <% if logged_in? %>
+    <% if user_signed_in? %>
       <li>
         <p>
-          Welcome, <b><%= current_user.full_name %></b> Guru.
-          <%= link_to 'Click to logout', logout_path, method: :delete %>
+          Welcome, <b><%= current_user.full_name %></b> Guru |
+          <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
         </p>
       </li>
     <% else %>
       <li>
-        <%= link_to 'Register', signup_path %> /
-        <%= link_to 'Login', login_path %>
+        <%= link_to 'Register', new_user_registration_path %> /
+        <%= link_to 'Login', new_user_session_path %>
       </li>
     <% end %>
   </ul>
