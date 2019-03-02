@@ -1,33 +1,140 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  helpers:
+    submit:
+      test:
+        create: "Create Test"
+        update: "Update Test"
+      question:
+        create: "Create Question"
+        update: "Update Question"
+      answer:
+        create: "Create Answer"
+        update: "Update Answer"
+    label:
+      test:
+        title: "Title"
+        level: "Level"
+        category: "Category"
+      question:
+        body: "Body"
+      answer:
+        body: "Body"
+        correct: "Correct"
+
+  layouts:
+    admin:
+      title: "Admin Panel | TestGuru"
+    application:
+      title: "TestGuru tests"
+
+  shared:
+    errors:
+      header:
+        one: "%{count} error detected"
+        other: "%{count} errors detected"
+    footer:
+      author: "Author"
+      project: "Project"
+      thinknetica: "Learning project in online school Thinknetica"
+    nav:
+      welcome: "Welcome"
+      guru: "Guru"
+      logout: "Logout"
+      register: "Registration"
+      login: "Login"
+
+  tests:
+    test:
+      start: "Start"
+    index:
+      header: "Tricky Tests"
+      title: "Title"
+      level: "Level"
+      question: "Question"
+      actions: "Actions"
+  test_passages:
+    show:
+      next: "Next"
+      test: "Test"
+    result:
+      title: "The %{title} Test was Completed!"
+      success: "Test successfuly finished"
+      failure: "Test failed, try again."
+
+  admin:
+    nav:
+      title: "TestGuru Admin Panel"
+      welcome: "Welcome"
+      guru: "Guru"
+      logout: "Logout"
+    tests:
+      test:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        sure: "Are you sure?"
+      index:
+        header: "Test"
+        new_test: "New test"
+        title: "Title"
+        level: "Level"
+        question: "Question"
+        actions: "Actions"
+      show:
+        header: "Test"
+        new_question: "New question"
+        level: "Level"
+        question: "Question"
+        actions: "Actions"
+        category: "Category"
+        author: "Author"
+        question_count: "Question count"
+        question_list: "Question list"
+        edit: "Edit"
+        list: "List"
+      new:
+        title: "New Test"
+        back: "Back"
+      edit:
+        title: "Edit Test"
+        show: "Show"
+        back: "Back"
+      create:
+        success: "Test was successfully created."
+    answers:
+      answer:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        sure: "Are you sure?"
+      show:
+        title: "Question"
+        edit: "Edit"
+        back: "Back"
+      edit:
+        title: "Edit Answer"
+        show: "Show"
+        back: "Back"
+      new:
+        title: "New Answer"
+        back: "Back"
+    questions:
+      question:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        sure: "Are you sure?"
+      show:
+        title: "Question"
+        answer: "Answer"
+        new_answer: "New answer"
+        edit: "Edit"
+        back: "Back"
+      edit:
+        back: "Back"
+      new:
+        back: "Back"
+
+  tests_mailer:
+    completed_test:
+      subject: "You just completed the TestGuru test!"
