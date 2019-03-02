@@ -1,4 +1,4 @@
-<h1>Pass the <%= @test_passage.test.title %> Test</h1>
+<h1>Pass the <%= @test_passage.test.title %> <%= t('.test') %></h1>
 
 <b>
   <%= @test_passage.current_question.body %>
@@ -16,6 +16,6 @@
     </p>
   <% end %>
   <p>
-    <%= form.submit 'Next' %>
+    <%= form.submit t('.next') %>
   </p>
 <% end %>

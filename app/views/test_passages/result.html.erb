@@ -1,12 +1,12 @@
-<h1>The <%= @test_passage.test.title %> Test was Completed!</h1>
+<h1><%= t('.title', title: @test_passage.test.title) %></h1>
 
 <div class="test-passage test-passage--<% if @test_passage.success? %>success<% else %>failure<% end %>">
   <p class="test-passage__result"><%= @test_passage.result %>%</p>
   <p class="test-passage_message">
     <% if @test_passage.success? %>
-      Test successfuly finished
+      <%= t('.success') %>
     <% else %>
-      Test failed, try again.
+      <%= t('.failure') %>
     <% end %>
   </p>
 </div>

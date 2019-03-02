@@ -6,14 +6,14 @@
     <% if user_signed_in? %>
       <li>
         <p>
-          Welcome, <b><%= current_user.full_name %></b> Guru |
-          <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+          <%= t('.welcome') %>, <b><%= current_user.full_name %></b> <%= t('.guru') %> |
+          <%= link_to t('.logout'), destroy_user_session_path, method: :delete %>
         </p>
       </li>
     <% else %>
       <li>
-        <%= link_to 'Register', new_user_registration_path %> /
-        <%= link_to 'Login', new_user_session_path %>
+        <%= link_to t('.register'), new_user_registration_path %> /
+        <%= link_to t('.login'), new_user_session_path %>
       </li>
     <% end %>
   </ul>

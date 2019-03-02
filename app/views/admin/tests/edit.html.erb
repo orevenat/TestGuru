@@ -1,5 +1,5 @@
-<h1>Edit Test <%= @test.title %></h1>
+<h1><%= t('.title') %> <%= @test.title %></h1>
 
 <%= render 'form' %>
-<%= link_to 'Show', [:admin, @test] %> |
-<%= link_to 'Back', admin_tests_path %>
+<%= link_to t('.show'), [:admin, @test] %> |
+<%= link_to t('.back'), admin_tests_path %>

@@ -1,0 +1,20 @@
+en:
+  activerecord:
+    models:
+      admin: "Admin"
+      answer: "Answer"
+      question: "Question"
+      user: "User"
+      test: "Test"
+      test_passage: "Test passage"
+
+    attributes:
+      test:
+        title: "Title"
+        level: "Level"
+        category: "Category"
+      question:
+        body: "Body"
+      answer:
+        body: "Body"
+        correct: "Correct"
