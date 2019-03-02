@@ -2,8 +2,10 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :set_locale
 
-  def default_url_options
-    { lang: I18n.locale }
+  def default_url_options(options = {})
+    added_options = { lang: I18n.locale } if params[:lang]
+    options.merge(added_options) if added_options
+    options
   end
 
   protected
@@ -25,6 +27,7 @@ class ApplicationController < ActionController::Base
   end
 
   def set_locale
+    # I18n.locale = params[:lang] || I18n.default_locale
     I18n.locale = I18n.locale_available?(params[:lang]) ? params[:lang] : I18n.default_locale
   end
 end
