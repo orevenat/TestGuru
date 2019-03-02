@@ -4,8 +4,7 @@ class ApplicationController < ActionController::Base
 
   def default_url_options(options = {})
     added_options = { lang: I18n.locale } if params[:lang]
-    options.merge(added_options) if added_options
-    options
+    added_options || options
   end
 
   protected
