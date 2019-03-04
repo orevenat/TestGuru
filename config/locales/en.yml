@@ -39,6 +39,7 @@ en:
       project: "Project"
       thinknetica: "Learning project in online school Thinknetica"
     nav:
+      admin_link: "Admin panel"
       welcome: "Welcome"
       guru: "Guru"
       logout: "Logout"
@@ -65,6 +66,7 @@ en:
 
   admin:
     nav:
+      admin_panel: "Admin panel"
       title: "TestGuru Admin Panel"
       welcome: "Welcome"
       guru: "Guru"
