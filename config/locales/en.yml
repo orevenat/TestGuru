@@ -134,6 +134,8 @@ en:
         new_answer: "New answer"
         edit: "Edit"
         back: "Back"
+        answer_body: "Body"
+        answer_actions: "Actions"
       edit:
         back: "Back"
       new:

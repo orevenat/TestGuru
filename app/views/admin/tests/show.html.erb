@@ -9,9 +9,9 @@
   <dd class="col-sm-9">A<%= @test.author.full_name %></dd>
   <dt class="col-sm-3"><%= t('.question_count') %>:</dt>
   <dd class="col-sm-9">A<%= @test.questions.count%></dd>
-</dl
+</dl>
 <%= link_to t('.new_question'), new_admin_test_question_path(@test.id) %>
-<h2 class="mb-3"><%= t('.question_list') %></h2>
+<h2 class="mt-3 mb-3"><%= t('.question_list') %></h2>
 <table class="table">
   <tr>
     <th><%= t('.question') %></th>

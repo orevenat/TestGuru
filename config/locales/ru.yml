@@ -48,8 +48,6 @@ ru:
       register: "Регистрация"
       login: "Войти"
 
-
-
   tests:
     test:
       start: "Начать"
@@ -138,6 +136,8 @@ ru:
         new_answer: "Новый ответ"
         edit: "Редактировать"
         back: "Назад"
+        answer_body: "Тело"
+        answer_actions: "Действия"
       edit:
         back: "Назад"
       new:
