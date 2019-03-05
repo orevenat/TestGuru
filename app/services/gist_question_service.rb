@@ -1,7 +1,7 @@
 class GistQuestionService
   ACCESS_TOKEN = ENV['GITHUB_TOKEN']
 
-  def initialize(question, client: nil)
+  def initialize(question, client = nil)
     @question = question
     @test = @question.test
     @client = client || GitHubClient.new(ACCESS_TOKEN)

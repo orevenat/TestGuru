@@ -20,7 +20,10 @@ class TestPassagesController < ApplicationController
   end
 
   def gist
-    result = GistQuestionService.new(@test_passage.current_question).call
+    result = GistQuestionService.new(
+      @test_passage.current_question,
+      Octokit::Client.new(access_token: ENV['GITHUB_TOKEN'])
+    ).call
 
     flash_options = if result.success?
                       { notice: t('.success') }
