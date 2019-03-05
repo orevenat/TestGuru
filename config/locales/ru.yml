@@ -61,10 +61,14 @@ ru:
     show:
       next: "Следующий"
       test: "Тест"
+      gist_button: "Вопрос в гист"
     result:
       title: "Тест %{title} был завершен!"
       success: "Тест успешно завершен"
       failure: "Тест провалег, попробуйте еще."
+    gist:
+      success: "Gist Успешно сохранен!"
+      failure: "Во время сохранения gist произошла ошибка"
 
   admin:
     nav:

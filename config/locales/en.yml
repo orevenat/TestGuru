@@ -59,10 +59,14 @@ en:
     show:
       next: "Next"
       test: "Test"
+      gist_button: "Gist Question"
     result:
       title: "The %{title} Test was Completed!"
       success: "Test successfuly finished"
       failure: "Test failed, try again."
+    gist:
+      success: "Gist was successfully created!"
+      failure: "An error occurred while saving gist"
 
   admin:
     nav:
