@@ -39,6 +39,7 @@ gem 'rails-i18n', '~> 5.1'
 
 # Networking
 gem 'faraday'
+gem 'octokit', '~> 4.0'
 
 # UI
 gem 'bootstrap', '~> 4.3.1'
