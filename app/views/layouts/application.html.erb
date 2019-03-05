@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title><%= t('.title') %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -9,12 +11,14 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= render 'shared/nav' %>
-    <div class="container">
-      <%= render 'shared/flash' %>
-      <%= yield %>
-    </div>
+  <body class="d-flex flex-column">
+    <main role="main" class="flex-shrink-0">
+      <%= render 'shared/nav' %>
+      <div class="container">
+        <%= render 'shared/flash' %>
+        <%= yield %>
+      </div>
+    </main>
     <%= render 'shared/footer' %>
   </body>
 </html>

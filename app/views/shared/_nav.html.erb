@@ -1,20 +1,16 @@
-<nav class="nav">
-  <ul>
-    <li>
-      <%= link_to 'TestGuru', root_path %>
-    </li>
+<nav class="navbar navbar-light bg-light">
+  <%= link_to 'TestGuru', root_path, class: 'navbar-brand' %>
+  <% if user_signed_in? && current_user.admin? %>
+    <%= link_to t('.admin_link'), admin_root_path, class: 'mr-auto' %>
+  <% end %>
+
+  <span class="navbar-text">
     <% if user_signed_in? %>
-      <li>
-        <p>
-          <%= t('.welcome') %>, <b><%= current_user.full_name %></b> <%= t('.guru') %> |
-          <%= link_to t('.logout'), destroy_user_session_path, method: :delete %>
-        </p>
-      </li>
+      <%= t('.welcome') %>, <b><%= current_user.full_name %></b> <%= t('.guru') %> |
+      <%= link_to t('.logout'), destroy_user_session_path, method: :delete %>
     <% else %>
-      <li>
-        <%= link_to t('.register'), new_user_registration_path %> /
-        <%= link_to t('.login'), new_user_session_path %>
-      </li>
+      <%= link_to t('.register'), new_user_registration_path %> |
+      <%= link_to t('.login'), new_user_session_path %>
     <% end %>
-  </ul>
+  </span>
 </nav>

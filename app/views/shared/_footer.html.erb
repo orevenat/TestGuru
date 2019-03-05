@@ -1,13 +1,18 @@
-<footer class="page-footer">
+<footer class="footer mt-auto py-3 bg-light">
   <div class="container">
-    <div class="col-xs-3">
-      ©<%= current_year %>
-    </div>
-    <div class="col-xs-9">
-
-      <p><%= t('.author') %>: <%= github_url(:orevenat)%></p>
-      <p><%= t('.project') %>: <%= github_url(:orevenat, :TestGuru)%></p>
-      <a href="https://thinknetica.com" target="_blank"><%= t('.thinknetica') %></a>
+    <div class="row">
+      <div class="col-xs-12 col-sm-2">
+        ©<%= current_year %>
+      </div>
+      <div class="col-xs-12 col-md-2">
+        <p><%= t('.author') %>: <%= github_url(:orevenat)%></p>
+      </div>
+      <div class="col-xs-12 col-md-3">
+        <p><%= t('.project') %>: <%= github_url(:orevenat, :TestGuru)%></p>
+      </div>
+      <div class="col-xs-12 col-md-5">
+        <a href="https://thinknetica.com" target="_blank"><%= t('.thinknetica') %></a>
+      </div>
     </div>
   </div>
 </footer>

@@ -41,13 +41,12 @@ ru:
       project: "Проект"
       thinknetica: "Учебный проект в онлайн-школе Thinknetica"
     nav:
+      admin_link: "Административная панель"
       welcome: "Добро пожаловать"
       guru: "Гуру"
       logout: "Выйти"
       register: "Регистрация"
       login: "Войти"
-
-  
 
   tests:
     test:
@@ -69,6 +68,7 @@ ru:
 
   admin:
     nav:
+      admin_link: "Административная панель"
       title: "Административная панель ТестГуру"
       welcome: "Добро пожаловать"
       guru: "Гуру"
@@ -136,6 +136,8 @@ ru:
         new_answer: "Новый ответ"
         edit: "Редактировать"
         back: "Назад"
+        answer_body: "Тело"
+        answer_actions: "Действия"
       edit:
         back: "Назад"
       new:

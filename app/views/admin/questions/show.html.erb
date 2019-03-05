@@ -4,11 +4,19 @@
   <%= @question.body %>
 </p>
 
-<h2><%= t('.answer') %>:</h2>
+<h2 class="mb-2 mt-2"><%= t('.answer') %>:</h2>
 <%= link_to t('.new_answer'), new_admin_question_answer_path(@question) %>
-<ol>
+<table class="table mt-3">
+  <tr>
+    <th>
+      <%= t('.answer_body') %>
+    </th>
+    <th colspan="3">
+      <%= t('.answer_actions') %>
+    </th>
+  <tr>
   <%= render @question.answers %>
-</ol>
+</table>
 
 <%= link_to t('.edit'), edit_admin_question_path(@question) %> |
 <%= link_to t('.back'), admin_test_path(@question.test) %>
