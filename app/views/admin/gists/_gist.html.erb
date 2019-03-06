@@ -1,0 +1,11 @@
+<tr>
+  <td>
+    <%= link_to gist.question.body[0..24], admin_question_path(gist.question) %>
+  </td>
+  <td>
+    <%= gist.user.full_name %>
+  </td>
+  <td>
+    <a href="<%= gist.url %>">Gist</a>
+  </td>
+</tr>
