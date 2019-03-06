@@ -1,4 +1,5 @@
 en:
+  description: "A question about %{test} from TestGuru"
   helpers:
     select:
       prompt: "Please select"

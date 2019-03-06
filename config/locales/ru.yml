@@ -1,4 +1,5 @@
 ru:
+  description: "Вопрос из теста %{test} от проекта TestGuru"
   helpers:
     select:
       prompt: "Пожалуйста, выберите"
@@ -67,7 +68,7 @@ ru:
       success: "Тест успешно завершен"
       failure: "Тест провалег, попробуйте еще."
     gist:
-      success: "Gist Успешно сохранен! Ссылка: #{url}"
+      success: "Gist Успешно сохранен! Ссылка: %{url}"
       failure: "Во время сохранения gist произошла ошибка"
 
   admin:
