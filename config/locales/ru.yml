@@ -72,12 +72,21 @@ ru:
       failure: "Во время сохранения gist произошла ошибка"
 
   admin:
+    left_nav:
+      gists: "Гисты"
+      tests: "Тесты"
     nav:
       admin_link: "Административная панель"
       title: "Административная панель ТестГуру"
       welcome: "Добро пожаловать"
       guru: "Гуру"
       logout: "Выйти"
+    gists:
+      index:
+        title: 'Список гистов всех пользоватлей'
+        question: 'Вопрос'
+        user: 'Пользователь'
+        url: 'Ссылка'
     tests:
       test:
         show: "Показать"

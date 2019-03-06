@@ -70,12 +70,21 @@ en:
       failure: "An error occurred while saving gist"
 
   admin:
+    left_nav:
+      gists: "Gists"
+      tests: "Tests"
     nav:
       admin_panel: "Admin panel"
       title: "TestGuru Admin Panel"
       welcome: "Welcome"
       guru: "Guru"
       logout: "Logout"
+    gists:
+      index:
+        title: 'All user gists list'
+        question: 'Question'
+        user: 'User'
+        url: 'Link'
     tests:
       test:
         show: "Show"
