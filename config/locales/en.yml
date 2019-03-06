@@ -65,7 +65,7 @@ en:
       success: "Test successfuly finished"
       failure: "Test failed, try again."
     gist:
-      success: "Gist was successfully created!"
+      success: "Gist was successfully created! Link: %{url}"
       failure: "An error occurred while saving gist"
 
   admin:

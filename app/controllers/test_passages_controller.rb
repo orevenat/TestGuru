@@ -25,13 +25,7 @@ class TestPassagesController < ApplicationController
       Octokit::Client.new(access_token: ENV['GITHUB_TOKEN'])
     ).call
 
-    flash_options = if result.success?
-                      { notice: t('.success') }
-                    else
-                      { alert: t('failure') }
-                    end
-
-    redirect_to @test_passage, flash_options
+    redirect_to @test_passage, notice: t('.success', url: result[:html_url])
   end
 
   private
