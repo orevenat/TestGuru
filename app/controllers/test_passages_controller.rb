@@ -25,7 +25,15 @@ class TestPassagesController < ApplicationController
       Octokit::Client.new(access_token: ENV['GITHUB_TOKEN'])
     ).call
 
-    redirect_to @test_passage, notice: t('.success', url: result[:html_url])
+    link = result[:html_url]
+
+    Gist.create(
+      user_id: current_user.id,
+      question_id: @test_passage.current_question.id,
+      url: link
+    )
+
+    redirect_to @test_passage, notice: t('.success', url: link)
   end
 
   private
