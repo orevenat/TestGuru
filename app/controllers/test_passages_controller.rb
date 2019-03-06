@@ -20,10 +20,9 @@ class TestPassagesController < ApplicationController
   end
 
   def gist
-    result = GistQuestionService.new(
-      @test_passage.current_question,
-      Octokit::Client.new(access_token: ENV['GITHUB_TOKEN'])
-    ).call
+    result = GistQuestionService.new(@test_passage.current_question).call
+
+    redirect_to @test_passage, alert: t('.failure') unless result[:html_url]
 
     link = result[:html_url]
 
