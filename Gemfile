@@ -37,6 +37,10 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise', '~> 4.6'
 gem 'rails-i18n', '~> 5.1'
 
+# Networking
+gem 'faraday'
+gem 'octokit', '~> 4.0'
+
 # UI
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
@@ -47,6 +51,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'dotenv-rails'
   gem 'faker'
 end
 

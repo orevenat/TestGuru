@@ -1,4 +1,5 @@
 ru:
+  description: "Вопрос из теста %{test} от проекта TestGuru"
   helpers:
     select:
       prompt: "Пожалуйста, выберите"
@@ -61,18 +62,31 @@ ru:
     show:
       next: "Следующий"
       test: "Тест"
+      gist_button: "Вопрос в гист"
     result:
       title: "Тест %{title} был завершен!"
       success: "Тест успешно завершен"
       failure: "Тест провалег, попробуйте еще."
+    gist:
+      success: "Gist Успешно сохранен! Ссылка: %{url}"
+      failure: "Во время сохранения gist произошла ошибка"
 
   admin:
+    left_nav:
+      gists: "Гисты"
+      tests: "Тесты"
     nav:
       admin_link: "Административная панель"
       title: "Административная панель ТестГуру"
       welcome: "Добро пожаловать"
       guru: "Гуру"
       logout: "Выйти"
+    gists:
+      index:
+        title: 'Список гистов всех пользоватлей'
+        question: 'Вопрос'
+        user: 'Пользователь'
+        url: 'Ссылка'
     tests:
       test:
         show: "Показать"

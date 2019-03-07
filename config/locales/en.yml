@@ -1,4 +1,5 @@
 en:
+  description: "A question about %{test} from TestGuru"
   helpers:
     select:
       prompt: "Please select"
@@ -59,18 +60,31 @@ en:
     show:
       next: "Next"
       test: "Test"
+      gist_button: "Gist Question"
     result:
       title: "The %{title} Test was Completed!"
       success: "Test successfuly finished"
       failure: "Test failed, try again."
+    gist:
+      success: "Gist was successfully created! Link: %{url}"
+      failure: "An error occurred while saving gist"
 
   admin:
+    left_nav:
+      gists: "Gists"
+      tests: "Tests"
     nav:
       admin_panel: "Admin panel"
       title: "TestGuru Admin Panel"
       welcome: "Welcome"
       guru: "Guru"
       logout: "Logout"
+    gists:
+      index:
+        title: 'All user gists list'
+        question: 'Question'
+        user: 'User'
+        url: 'Link'
     tests:
       test:
         show: "Show"
