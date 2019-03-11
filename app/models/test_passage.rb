@@ -29,6 +29,10 @@ class TestPassage < ApplicationRecord
     test.questions.where('id <= ?', current_question).count
   end
 
+  def current_percent
+    ((current_number.to_f - 1) / test.questions.count * 100).round
+  end
+
   private
 
   def before_validation_set_first_question
