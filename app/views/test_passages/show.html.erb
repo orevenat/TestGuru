@@ -8,6 +8,9 @@
     <%= @test_passage.current_number %>/
     <%= @test_passage.test.questions_count %>
   </b>
+  <div class="progress">
+    <div class="progress-bar" style="width: <%= @test_passage.current_percent %>%" role="progressbar" aria-valuenow="<%= @test_passage.current_number %>" aria-valuemin="0" aria-valuemax="<%= @test_passage.test.questions_count %>"></div>
+  </div>
 </p>
 
 <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
