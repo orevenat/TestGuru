@@ -54,7 +54,7 @@ ru:
       start: "Начать"
     index:
       header: "Доступные Тесты"
-      title: "Назваание"
+      title: "Название"
       level: "Уровень"
       question: "Вопрос"
       actions: "Действия"
