@@ -30,7 +30,7 @@ class TestPassage < ApplicationRecord
   end
 
   def current_percent
-    (current_number.to_f / test.questions.count * 100).round
+    ((current_number.to_f - 1) / test.questions.count * 100).round
   end
 
   private
