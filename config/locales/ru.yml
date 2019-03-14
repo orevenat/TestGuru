@@ -13,6 +13,8 @@ ru:
       answer:
         create: "Создать Ответ"
         update: "Обновить Ответ"
+      feedback:
+        create: "Отправить"
     label:
       test:
         title: "Название"
@@ -23,6 +25,11 @@ ru:
       answer:
         body: "Тело"
         correct: "Правильный"
+      feedback:
+        name: "Имя"
+        email: "Е-мейл"
+        phone_number: "Телефон"
+        body: "Сообщение"
 
   layouts:
     admin:
@@ -70,6 +77,12 @@ ru:
     gist:
       success: "Gist Успешно сохранен! Ссылка: %{url}"
       failure: "Во время сохранения gist произошла ошибка"
+  feedbacks:
+    new:
+      title: 'Отправить сообщение администратору'
+    result:
+      title: 'Сообщение успешно отправлено'
+      message: 'Мы с Вами свяжемся'
 
   admin:
     left_nav:

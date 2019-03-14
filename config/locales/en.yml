@@ -13,6 +13,8 @@ en:
       answer:
         create: "Create Answer"
         update: "Update Answer"
+      feedback:
+        create: "Send"
     label:
       test:
         title: "Title"
@@ -23,6 +25,11 @@ en:
       answer:
         body: "Body"
         correct: "Correct"
+      feedback:
+        name: "Name"
+        email: "Email"
+        phone_number: "Phone number"
+        body: "Body"
 
   layouts:
     admin:
@@ -68,6 +75,12 @@ en:
     gist:
       success: "Gist was successfully created! Link: %{url}"
       failure: "An error occurred while saving gist"
+  feedbacks:
+    new:
+      title: 'Send message to admin'
+    result:
+      title: 'Message successfuly sended'
+      message: 'We will connect with you'
 
   admin:
     left_nav:

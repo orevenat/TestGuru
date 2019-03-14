@@ -28,4 +28,8 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  resource :feedbacks, only: %i[new create] do
+    get :result
+  end
 end
