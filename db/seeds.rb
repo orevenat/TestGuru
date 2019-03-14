@@ -7,8 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-admin = Admin.find_or_create_by(first_name: 'Ruslan', last_name: 'Knyazev', email: 'agrry@yandex.ru')
-admin.password = 'admin'
+admin = Admin.new(first_name: 'Ruslan', last_name: 'Knyazev', email: 'agrry@yandex.ru')
+admin.password = 'admin01'
 admin.save
 
 10.times do
