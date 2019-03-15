@@ -4,7 +4,7 @@ class Answer < ApplicationRecord
   scope :correct, -> { where(correct: true) }
 
   validates :body, presence: true
-  validate :validate_answers
+  validate :validate_answers, on: :create
 
   def validate_answers
     errors.add(:answers, 'Must be between 1 & 4') if question && question.answers.size >= 4
