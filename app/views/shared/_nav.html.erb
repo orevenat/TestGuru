@@ -1,5 +1,6 @@
 <nav class="navbar navbar-light bg-light">
   <%= link_to 'TestGuru', root_path, class: 'navbar-brand' %>
+  <%= link_to t('.feedback'), new_feedbacks_path, class: 'ml-2 mr-2' %>
   <% if user_signed_in? && current_user.admin? %>
     <%= link_to t('.admin_link'), admin_root_path, class: 'mr-auto' %>
   <% end %>

@@ -7,11 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-10.times do
-  name = Faker::Name
-  User.create(first_name: name.first_name, last_name: name.last_name,
-              password: Faker::Internet.password, email: Faker::Internet.email)
+admin = Admin.find_or_create_by(first_name: 'Ruslan', last_name: 'Knyazev', email: 'agrry@yandex.ru')
+admin.password = 'admin01'
+admin.save
 
+10.times do
   Category.create(title: Faker::ProgrammingLanguage.name)
 end
 

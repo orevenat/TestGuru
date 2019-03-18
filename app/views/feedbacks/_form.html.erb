@@ -1,0 +1,22 @@
+<%= form_with model: @feedback, local: true do |form| %>
+    <%= render 'errors', resource: @feedback %>
+    <div class="form-group">
+      <%= form.label :name %>
+      <%= form.text_field :name, id: :feedback_name, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= form.label :email %>
+      <%= form.text_field :email, id: :feedback_email, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= form.label :phone_number %>
+      <%= form.text_field :phone_number, id: :feedback_phone_number, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= form.label :body %>
+      <%= form.text_field :body, id: :feedback_body, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= form.submit nil, class: 'btn btn-primary' %>
+    </div>
+<% end %>

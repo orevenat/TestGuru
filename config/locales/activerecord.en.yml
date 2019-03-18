@@ -7,6 +7,7 @@ en:
       user: "User"
       test: "Test"
       test_passage: "Test passage"
+      feedback: "Feedback"
 
     attributes:
       test:
@@ -18,3 +19,8 @@ en:
       answer:
         body: "Body"
         correct: "Correct"
+      feedback:
+        name: "Name"
+        email: "Email"
+        phone_number: "Phone number"
+        body: "Message"

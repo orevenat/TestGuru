@@ -13,6 +13,8 @@ en:
       answer:
         create: "Create Answer"
         update: "Update Answer"
+      feedback:
+        create: "Send"
     label:
       test:
         title: "Title"
@@ -23,6 +25,11 @@ en:
       answer:
         body: "Body"
         correct: "Correct"
+      feedback:
+        name: "Name"
+        email: "Email"
+        phone_number: "Phone number"
+        body: "Body"
 
   layouts:
     admin:
@@ -40,6 +47,7 @@ en:
       project: "Project"
       thinknetica: "Learning project in online school Thinknetica"
     nav:
+      feedback: "Feedback"
       admin_link: "Admin panel"
       welcome: "Welcome"
       guru: "Guru"
@@ -68,6 +76,16 @@ en:
     gist:
       success: "Gist was successfully created! Link: %{url}"
       failure: "An error occurred while saving gist"
+  feedbacks:
+    errors:
+      header:
+        one: "%{count} error detected"
+        other: "%{count} errors detected"
+    new:
+      title: 'Send message to admin'
+    result:
+      title: 'Message successfuly sended'
+      message: 'We will connect with you'
 
   admin:
     left_nav:

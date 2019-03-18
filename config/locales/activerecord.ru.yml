@@ -7,6 +7,7 @@ ru:
       question: "Вопрос"
       user: "Пользователь"
       test_passage: "Прохождение теста"
+      feedback: "Обратная связь"
 
     attributes:
       test:
@@ -18,6 +19,11 @@ ru:
       answer:
         body: "Тело"
         correct: "Верный"
+      feedback:
+        name: "Имя"
+        email: "Емейл"
+        phone_number: "Телефон"
+        body: "Сообщение"
 
     errors:
       messages:
