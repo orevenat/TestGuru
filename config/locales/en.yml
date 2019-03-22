@@ -47,6 +47,8 @@ en:
       project: "Project"
       thinknetica: "Learning project in online school Thinknetica"
     nav:
+      badges: "Badges"
+      my_badges: "My Badges"
       feedback: "Feedback"
       admin_link: "Admin panel"
       welcome: "Welcome"
@@ -55,6 +57,15 @@ en:
       register: "Registration"
       login: "Login"
 
+  badges:
+    index:
+      title: "All badges"
+      name: "Name"
+      picture: "Picture"
+    my_badges:
+      title: "My badges"
+      name: "Name"
+      picture: "Picture"
   tests:
     test:
       start: "Start"

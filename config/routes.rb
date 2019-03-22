@@ -10,6 +10,9 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :badges, only: %i[index]
+  get '/my_badges' => 'badges#my_badges'
+
   resources :test_passages, only: %i[show update] do
     member do
       get :result
