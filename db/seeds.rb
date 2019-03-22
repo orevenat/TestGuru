@@ -35,3 +35,9 @@ end
   end
 end
 
+Rule.create(rule_type: 'Category', value: Category.first.title)
+Rule.create(rule_type: 'Attempt', value: '1')
+Rule.create(rule_type: 'Level', value: '0')
+
+Badge.create(name: 'Backend Finish', picture: 'https://image.flaticon.com/icons/png/128/1579/1579490.png', rule_id: Rule.first.id)
+Badge.create(name: 'Level finish', picture: 'https://image.flaticon.com/icons/png/128/1579/1579491.png', rule_id: Rule.last.id)
