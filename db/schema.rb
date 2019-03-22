@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 2019_03_22_115620) do
   end
 
   create_table "rules", force: :cascade do |t|
-    t.string "type"
+    t.string "rule_type"
     t.string "value"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -1,5 +1,6 @@
 class Admin::BadgesController < Admin::BaseController
   before_action :find_badge, only: %i[show edit update destroy]
+  before_action :find_rules, only: %i[new edit create update]
 
   def index
     @badges = Badge.all
@@ -40,10 +41,14 @@ class Admin::BadgesController < Admin::BaseController
   private
 
   def badge_params
-    params.require(:badge).permit(:name, :picture)
+    params.require(:badge).permit(:name, :picture, :rule_id)
   end
 
   def find_badge
     @badge = Badge.find(params[:id])
+  end
+
+  def find_rules
+    @rules = Rule.all
   end
 end

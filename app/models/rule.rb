@@ -1,3 +1,4 @@
 class Rule < ApplicationRecord
-  validates :type, presence :true
+  has_many :badge
+  validates :rule_type, presence: true
 end
