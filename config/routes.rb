@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get '/admin' => 'admin/tests#index', as: :admin_root
   namespace :admin do
     resources :gists, only: :index
+    resources :badges
     resources :tests do
       patch :update_inline, on: :member
 

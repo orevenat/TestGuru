@@ -4,6 +4,9 @@ ru:
     select:
       prompt: "Пожалуйста, выберите"
     submit:
+      badge:
+        create: "Создать Бейдж"
+        update: "Обновить Бейдж"
       test:
         create: "Создать Тест"
         update: "Обновить Тест"
@@ -95,6 +98,7 @@ ru:
     left_nav:
       gists: "Гисты"
       tests: "Тесты"
+      badges: "Бэйджи"
     nav:
       admin_link: "Административная панель"
       title: "Административная панель ТестГуру"
@@ -174,6 +178,26 @@ ru:
         back: "Назад"
         answer_body: "Тело"
         answer_actions: "Действия"
+      edit:
+        back: "Назад"
+      new:
+        back: "Назад"
+    badges:
+      badge:
+        show: "Показать"
+        edit: "Редактировать"
+        delete: "Удалить"
+        sure: "Вы уверены?"
+      index:
+        header: "Бэйджи"
+        new_badge: "Новый Бейдж"
+        title: "Имя"
+        actions: "Действия"
+      show:
+        edit: "Редактировать"
+        back: "Назад"
+        badge_name: "Имя"
+        badge_actions: "Действия"
       edit:
         back: "Назад"
       new:

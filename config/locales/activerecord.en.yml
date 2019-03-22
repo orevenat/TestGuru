@@ -14,6 +14,9 @@ en:
         title: "Title"
         level: "Level"
         category: "Category"
+      badge:
+        name: "Name"
+        picture: "Picture"
       question:
         body: "Body"
       answer:

@@ -91,6 +91,7 @@ en:
     left_nav:
       gists: "Gists"
       tests: "Tests"
+      badges: "Badges"
     nav:
       admin_panel: "Admin panel"
       title: "TestGuru Admin Panel"
@@ -170,6 +171,26 @@ en:
         back: "Back"
         answer_body: "Body"
         answer_actions: "Actions"
+      edit:
+        back: "Back"
+      new:
+        back: "Back"
+    badges:
+      badge:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        sure: "Are you sure?"
+      index:
+        header: "Badges"
+        new_badge: "New badge"
+        title: "Name"
+        actions: "Actions"
+      show:
+        edit: "Edit"
+        back: "Back"
+        badge_name: "Name"
+        badge_actions: "Actions"
       edit:
         back: "Back"
       new:
