@@ -5,9 +5,7 @@ class BadgeCheckService
   end
 
   def call(test_passage)
-    if test_passage.completed?
 
-    end
   end
 
   def private
