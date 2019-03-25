@@ -1,12 +1,11 @@
 class BadgeCheckService
-  def def initialize(user)
+  def initialize(user)
     @user = user
     @badges = Badge.all
+    @checks = []
   end
 
   def call(test_passage)
 
   end
-
-  def private
 end
