@@ -14,11 +14,11 @@ class BadgeCheckService
   private
 
   def category_award?(rule)
-    TestPassage.where(user_id: @user.id).select {|tp| tp.test.category.title == rule.value && tp.success? }.count == Test.where(category_id: Category.find_by(title: rule.value)).count
+    TestPassage.where(user_id: @user.id).select {|tp| tp.test.category.title == rule.value && tp.success? }.count == Test.where(category_id: Category.find_by(title: rule.value).id).count
   end
 
   def level_award?(rule)
-    Test.where(level: rule.value.to_i).count == TestPassage.where(user_id: @user.id).select { |tp| tp.test.level == 3 && tp.success? }.count
+    Test.where(level: rule.value.to_i).count == TestPassage.where(user_id: @user.id).select { |tp| tp.test.level == rule.value.to_i && tp.success? }.count
   end
 
   def attempt_award?(rule)
