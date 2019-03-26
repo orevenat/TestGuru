@@ -31,11 +31,11 @@ author_id = User.first.id
   end
 end
 
-Rule.create(rule_type: 'Category', value: Category.first.title)
+Rule.create(rule_type: 'category', value: Category.first.title)
 rule_one = Rule.last.id
-Rule.create(rule_type: 'Attempt', value: '1')
+Rule.create(rule_type: 'attempt', value: '1')
 rule_two = Rule.last.id
-Rule.create(rule_type: 'Level', value: '0')
+Rule.create(rule_type: 'level', value: '0')
 rule_three = Rule.last.id
 
 Badge.create(name: 'Backend Finish',
