@@ -1,7 +1,7 @@
 class BadgeCheckService
-  def initialize(user, test_passage)
-    @user = user
+  def initialize(test_passage)
     @test_passage = test_passage
+    @user = test_passage.user
     @rules = Rule.all
   end
 
@@ -14,11 +14,13 @@ class BadgeCheckService
   private
 
   def category_award?(rule)
-    TestPassage.where(user_id: @user.id).select {|tp| tp.test.category.title == rule.value && tp.success? }.count == Test.where(category_id: Category.find_by(title: rule.value).id).count
+    user_tests_ids = TestPassage.where(user_id: @user.id).select { |tp| tp.success? && tp.test.category.title == rule.value }.map(&:test).map(&:id).uniq.sort
+    real_tests_ids =Test.where(category_id: Category.find_by(title: rule.value).id).ids.uniq.sort
+    user_tests_ids == real_tests_ids
   end
 
   def level_award?(rule)
-    Test.where(level: rule.value.to_i).count == TestPassage.where(user_id: @user.id).select { |tp| tp.test.level == rule.value.to_i && tp.success? }.count
+    Test.where(level: rule.value.to_i).ids.uniq.sort == TestPassage.where(user_id: @user.id).select { |tp| tp.test.level == rule.value.to_i && tp.success? }.map(&:test).map(&:id).uniq.sort
   end
 
   def attempt_award?(rule)
