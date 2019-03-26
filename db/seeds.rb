@@ -1,43 +1,51 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-admin = Admin.find_or_create_by(first_name: 'Ruslan', last_name: 'Knyazev', email: 'agrry@yandex.ru')
+admin = Admin.find_or_create_by(first_name: 'Ruslan',
+                                last_name: 'Knyazev',
+                                email: 'agrry@yandex.ru')
 admin.password = 'admin01'
 admin.save
 
-10.times do
-  Category.create(title: Faker::ProgrammingLanguage.name)
-end
-
-
 author_id = User.first.id
 
-20.times do
-  Test.create(author_id: author_id, title: Faker::Lorem.sentence,
-              level: (0..5).to_a.sample,
-              category_id: Category.pluck(:id).sample)
-end
+%w[Backend Frontend DevOps].each do |w|
+  Category.create(title: w)
 
-50.times do
-  Question.create(body: Faker::Lorem.question, test_id: Test.pluck(:id).sample)
+  (0..3).each do |num|
+    category_id = Category.last.id
+    Test.create(author_id: author_id, title: "#{w} lvl #{num}",
+                level: num,
+                category_id: category_id)
 
-  question_id = Question.last.id
-  4.times do
-    correct = Answer.find_by(question_id: question_id).nil? ? true : false
-    Answer.create(body: Faker::Lorem.sentence, correct: correct,
-                  question_id: question_id)
+    test_id = Test.last.id
+    (1..4).each do |q|
+      Question.create(body: "#{w} question ##{q}", test_id: test_id)
+      question_id = Question.last.id
+
+      (1..4).each do |a|
+        correct = a == 1
+        Answer.create(body: "#{q} answer ##{a}", correct: correct,
+                      question_id: question_id)
+      end
+    end
   end
 end
 
 Rule.create(rule_type: 'Category', value: Category.first.title)
+rule_one = Rule.last.id
 Rule.create(rule_type: 'Attempt', value: '1')
+rule_two = Rule.last.id
 Rule.create(rule_type: 'Level', value: '0')
+rule_three = Rule.last.id
 
-Badge.create(name: 'Backend Finish', picture: 'https://image.flaticon.com/icons/png/128/1579/1579490.png', rule_id: Rule.first.id)
-Badge.create(name: 'Level finish', picture: 'https://image.flaticon.com/icons/png/128/1579/1579491.png', rule_id: Rule.last.id)
+Badge.create(name: 'Backend Finish',
+             picture: 'https://image.flaticon.com/icons/png/128/1579/1579490.png',
+             rule_id: rule_one)
+
+Badge.create(name: 'Attempt Finish',
+             picture: 'https://image.flaticon.com/icons/png/128/1579/1579491.png',
+             rule_id: rule_two)
+
+Badge.create(name: 'Level finish',
+             picture: 'https://image.flaticon.com/icons/png/128/1579/1579492.png',
+             rule_id: rule_three)
