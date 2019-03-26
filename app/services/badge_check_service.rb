@@ -14,13 +14,15 @@ class BadgeCheckService
   private
 
   def category_award?(rule)
-    user_tests_ids = TestPassage.where(user_id: @user.id).select { |tp| tp.success? && tp.test.category.title == rule.value }.map(&:test).map(&:id).uniq.sort
-    real_tests_ids =Test.where(category_id: Category.find_by(title: rule.value).id).ids.uniq.sort
-    user_tests_ids == real_tests_ids
+    Test.where(category_id: Category.find_by(title: rule.value).id).all? do |t|
+      t.test_passages.where(user_id: @user.id).any?(&:success?)
+    end
   end
 
   def level_award?(rule)
-    Test.where(level: rule.value.to_i).ids.uniq.sort == TestPassage.where(user_id: @user.id).select { |tp| tp.test.level == rule.value.to_i && tp.success? }.map(&:test).map(&:id).uniq.sort
+    Test.where(level: rule.value.to_i).all? do |t|
+      t.test_passages.where(user_id: @user.id).any?(&:success?)
+    end
   end
 
   def attempt_award?(rule)
