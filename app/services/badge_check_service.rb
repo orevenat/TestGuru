@@ -7,21 +7,21 @@ class BadgeCheckService
 
   def call
     @rules.each do |rule|
-      @current_user.badges << rule.badges if send "#{rule.rule_type}_award?", rule
+      @user.badges << rule.badge if send "#{rule.rule_type}_award?", rule
     end
   end
 
   private
 
   def category_award?(rule)
-    TestPassages.where(user_id: @current_user.id).select {|tp| tp.test.category == rule.category && tp.success? } == Test.where(category_id: rule.value.to_i)
+    TestPassage.where(user_id: @user.id).select {|tp| tp.test.category.title == rule.value && tp.success? }.count == Test.where(category_id: Category.find_by(title: rule.value)).count
   end
 
   def level_award?(rule)
-    Test.where(level: rule.value.to_i).count == TestPassage.where(user_id: @current_user.id).select { |tp| tp.test.level == 3 && tp.success? }.count
+    Test.where(level: rule.value.to_i).count == TestPassage.where(user_id: @user.id).select { |tp| tp.test.level == 3 && tp.success? }.count
   end
 
-  def attepmt_award?(_rule)
-    @test_passage.find_by(user_id: @current_user.id).count == 1
+  def attempt_award?(rule)
+    TestPassage.where(user_id: @user.id, test_id: @test_passage.test.id).count == rule.value.to_i
   end
 end
