@@ -47,6 +47,8 @@ en:
       project: "Project"
       thinknetica: "Learning project in online school Thinknetica"
     nav:
+      badges: "Badges"
+      my_badges: "My Badges"
       feedback: "Feedback"
       admin_link: "Admin panel"
       welcome: "Welcome"
@@ -55,6 +57,15 @@ en:
       register: "Registration"
       login: "Login"
 
+  badges:
+    index:
+      title: "All badges"
+      name: "Name"
+      picture: "Picture"
+    my_badges:
+      title: "My badges"
+      name: "Name"
+      picture: "Picture"
   tests:
     test:
       start: "Start"
@@ -91,6 +102,7 @@ en:
     left_nav:
       gists: "Gists"
       tests: "Tests"
+      badges: "Badges"
     nav:
       admin_panel: "Admin panel"
       title: "TestGuru Admin Panel"
@@ -170,6 +182,26 @@ en:
         back: "Back"
         answer_body: "Body"
         answer_actions: "Actions"
+      edit:
+        back: "Back"
+      new:
+        back: "Back"
+    badges:
+      badge:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        sure: "Are you sure?"
+      index:
+        header: "Badges"
+        new_badge: "New badge"
+        title: "Name"
+        actions: "Actions"
+      show:
+        edit: "Edit"
+        back: "Back"
+        badge_name: "Name"
+        badge_actions: "Actions"
       edit:
         back: "Back"
       new:

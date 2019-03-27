@@ -1,0 +1,7 @@
+<h1><%= @badge.name %></h1>
+
+<img src="<%= @badge.picture %>">
+<br>
+
+<%= link_to t('.edit'), edit_admin_badge_path(@badge) %> |
+<%= link_to t('.back'), admin_badges_path %>

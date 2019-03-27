@@ -14,6 +14,9 @@ ru:
         title: "Название"
         level: "Уровень"
         category: "Категория"
+      badge:
+        name: "Имя"
+        picture: "Изображение"
       question:
         body: "Тело"
       answer:

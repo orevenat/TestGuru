@@ -2,6 +2,7 @@ class Admin::TestsController < Admin::BaseController
 
   before_action :find_tests, only: %i[index update_inline]
   before_action :find_test, only: %i[show edit update destroy update_inline]
+  before_action :find_categories, only: %i[new edit create update]
 
   def index
   end
@@ -59,5 +60,9 @@ class Admin::TestsController < Admin::BaseController
 
   def find_test
     @test = Test.find(params[:id])
+  end
+
+  def find_categories
+    @categories = Category.all
   end
 end
