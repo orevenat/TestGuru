@@ -79,6 +79,7 @@ ru:
       header: "Доступные Тесты"
       title: "Название"
       level: "Уровень"
+      timer: "Таймер"
       question: "Вопрос"
       actions: "Действия"
   test_passages:
