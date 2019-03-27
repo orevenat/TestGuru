@@ -23,6 +23,7 @@ ru:
         title: "Название"
         level: "Уровень"
         category: "Категория"
+        timer: "Таймер"
       question:
         body: "Тело"
       answer:
@@ -135,6 +136,7 @@ ru:
         new_test: "Новый тест"
         title: "Название"
         level: "Уровень"
+        timer: "Таймер"
         question: "Вопросы"
         actions: "Действия"
       show:
@@ -144,6 +146,8 @@ ru:
         question: "Вопросы"
         actions: "Действия"
         category: "Категория"
+        timer: "Таймер"
+        timer_value: "секунд"
         author: "Автор"
         question_count: "Количество вопросов"
         question_list: "Список вопросов"
