@@ -1,6 +1,7 @@
 class TestPassagesController < ApplicationController
   before_action :authenticate_user!
   before_action :find_test_passage, only: %i[show update result gist]
+  before_action :check_test_ended, only: %i[show update]
 
   def show
   end
@@ -37,6 +38,12 @@ class TestPassagesController < ApplicationController
   end
 
   private
+
+  def check_test_ended
+    timer = @test_passage.test.timer
+    time_left = (@test_passage.created_at + timer) - Time.now
+    redirect_to result_test_passage_path(@test_passage) if timer.positive? && time_left <= 0
+  end
 
   def find_test_passage
     @test_passage = TestPassage.find(params[:id])

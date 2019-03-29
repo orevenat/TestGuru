@@ -4,6 +4,10 @@ function startTimer(duration, startAt, display) {
   var newDuration = duration > diff ? duration - diff : 0;
   var timer = newDuration, minutes, seconds;
 
+  if (newDuration === 0) {
+    return;
+  }
+
   setInterval(function () {
     minutes = parseInt(timer / 60, 10)
     seconds = parseInt(timer % 60, 10);
@@ -12,9 +16,11 @@ function startTimer(duration, startAt, display) {
     seconds = seconds < 10 ? `0${seconds}` : seconds;
 
     display.textContent = `${minutes}:${seconds}`;
-
-    if (--timer < 0) {
+    
+    timer -= 1;
+    if (timer < 0) {
       timer = newDuration;
+      document.location.reload();
     }
   }, 1000);
 }
