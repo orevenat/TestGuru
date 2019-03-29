@@ -8,6 +8,12 @@
     <%= @test_passage.current_number %>/
     <%= @test_passage.test.questions_count %>
   </b>
+  <% if @test_passage.test.timer > 0 %>
+    <p>
+      <b><%= t('.time_left') %></b>
+      <%= content_tag :span, '', data: { duration: @test_passage.test.timer, time: @test_passage.created_at.to_i }, id: 'timer' %>
+    </p>
+  <% end %>
   <div class="progress">
     <div class="progress-bar" style="width: <%= @test_passage.current_percent %>%" role="progressbar" aria-valuenow="<%= @test_passage.current_number %>" aria-valuemin="0" aria-valuemax="<%= @test_passage.test.questions_count %>"></div>
   </div>
