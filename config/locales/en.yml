@@ -19,6 +19,7 @@ en:
       test:
         title: "Title"
         level: "Level"
+        timer: "Timer"
         category: "Category"
       question:
         body: "Body"
@@ -73,6 +74,7 @@ en:
       header: "Tricky Tests"
       title: "Title"
       level: "Level"
+      timer: "Timer"
       question: "Question"
       actions: "Actions"
   test_passages:
@@ -128,12 +130,15 @@ en:
         new_test: "New test"
         title: "Title"
         level: "Level"
+        timer: "Timer"
         question: "Question"
         actions: "Actions"
       show:
         header: "Test"
         new_question: "New question"
         level: "Level"
+        timer: "Timer"
+        timer_value: "seconds"
         question: "Question"
         actions: "Actions"
         category: "Category"
