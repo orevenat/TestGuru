@@ -1,7 +1,7 @@
 function startTimer(duration, startAt, display) {
   var curTime = Math.floor((new Date()).getTime() / 1000)
-  var diff = curTime - startAt
-  var newDuration = diff < duration ? duration - diff : 0;
+  var diff = curTime - startAt;
+  var newDuration = duration > diff ? duration - diff : 0;
   var timer = newDuration, minutes, seconds;
 
   setInterval(function () {
@@ -14,7 +14,7 @@ function startTimer(duration, startAt, display) {
     display.textContent = `${minutes}:${seconds}`;
 
     if (--timer < 0) {
-      timer = duration;
+      timer = newDuration;
     }
   }, 1000);
 }
