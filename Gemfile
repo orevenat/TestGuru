@@ -33,7 +33,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 # Auth
-gem 'devise', '~> 4.6'
+gem 'devise', '~> 4.7'
 gem 'rails-i18n', '~> 5.1'
 
 # Networking
